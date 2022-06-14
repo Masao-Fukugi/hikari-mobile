@@ -6,21 +6,23 @@
 .full {
     width: 100vw;
 }
-.photo {
-    width: 100%;
-}
-.color-g {
-    background-color: #EEFFEE;
-}
+
 .color-b {
-    background: linear-gradient(to right, rgba(0, 255, 255, 0.5) 65%, rgba(41, 171, 226, 0.5)); 
+    background: linear-gradient(to right, rgba(0, 255, 255, 0.25) 65%, rgba(41, 171, 226, 0.25)); 
 }
 
 
 .fv {
     @extend .full;
+    height: 100vh;
+    background-image: url(/assets/img/fv-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     &__photo {
         @extend .photo;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
     &__img {
         width: 100%;
@@ -29,6 +31,7 @@
 .wrap {
     @extend .full;
     padding-top: 150px;
+    background-color: #EEFFEE;
     @include sp {
         padding-top: calc(100vw * 150 / 1200);
     }
@@ -42,10 +45,14 @@
     }
 }
 .block {
-    margin: 0 auto;
+    margin: 0 auto 100px;
     max-width: 1200px;
+    &--wallet {
+        margin: 0 auto;
+        max-width: 1200px;    
+    }
     &__photo {
-        @extend .photo;
+        width: 100%;
     }
     &__img {
         width: 100%;
@@ -90,12 +97,13 @@
     }
     &__list {
         max-width: 350px;
+        box-shadow: 10px 10px 10px;
         @include sp {
             width: calc(100vw * 350 / 1200);
         }
     }
     &__question {
-        @extend .photo;
+        width: 100%;
         padding-bottom: 50px;
         margin-top: 50px;
     }
