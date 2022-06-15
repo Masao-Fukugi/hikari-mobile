@@ -19,6 +19,8 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        @include sp {
+        }
     }
     &__img {
         width: 100%;
@@ -29,6 +31,7 @@
     padding-top: 150px;
     background-color: #EEFFEE;
     &:last-of-type {
+        padding: 100px 0;
         background: linear-gradient(to right, rgba(0, 255, 255, 0.25) 65%, rgba(41, 171, 226, 0.25)); 
     }
     @include sp {
@@ -46,6 +49,10 @@
 .block {
     margin: 0 auto 100px;
     max-width: 1200px;
+    @include sp {
+        width: 90%;
+        margin-bottom: 50px;
+    }
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -98,24 +105,31 @@
         justify-content: space-between;
         margin-top: 50px;
         width: 100%;
+        @include sp {
+            display: block;
+            margin-top: 30px;
+        }
     }
     &__list {
         max-width: 350px;
         box-shadow: 10px 10px 10px;
         @include sp {
-            width: calc(100vw * 350 / 1200);
+            margin-top: 30px;
+            width: 100%;
         }
         &--circle {
             max-width: 350px;
             border-radius: 30px;
             @include sp {
-                width: calc(100vw * 350 / 1200);
+                margin-top: 30px;
+                width: 100%;
             }    
         }
     }
     &__question {
-        width: 100%;
+        padding-bottom: 50px;
         margin-top: 50px;
+        width: 100%;
     }
 }
 .attention {
@@ -156,9 +170,16 @@
     }
 }
 .button {
-    padding: 100px 0;
-    margin: 0 auto;
+    margin: 100px auto;
     max-width: 1000px;
+    height: 100px;
+    background: linear-gradient(to right, #0000ff, #2E3192); 
+    border-radius: 50px;
+    text-align: center;
+    :hover {
+        background-color: #fff;
+        border-radius: 50px;
+    }
     @include sp {
         padding-bottom: calc(100vw *100 / 1200);
         margin-top: calc(100vw *100 / 1200);
@@ -166,7 +187,15 @@
     }
     &__link {
         display: inline-block;
-        margin: 0 auto;
+        padding: 26px 0;
+        width: 100%;
+        color: #fff;
+        font-size: 48px;
+        line-height: 1;
+        text-decoration: none;
+        :hover {
+            color: #0000ff;
+        }
     }
     &__img {
         width: 100%;
